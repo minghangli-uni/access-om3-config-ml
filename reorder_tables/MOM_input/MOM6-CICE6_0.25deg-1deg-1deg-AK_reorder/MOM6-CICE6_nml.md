@@ -97,11 +97,11 @@
 | [**mle_front_lengt<br>h**](https://github.com/mom-ocean/MOM6/search?q=mle_front_length) | 250.0 |     1000.0 |     1000.0 |
 | [**mle_mld_decay_t<br>ime**](https://github.com/mom-ocean/MOM6/search?q=mle_mld_decay_time) | 2592000.0 | 345600.0 | 345600.0 |
 | [use_legacy_diab<br>atic_driver](https://github.com/mom-ocean/MOM6/search?q=use_legacy_diabatic_driver) | False | False |     False |
-| [**use_kpp**        ](https://github.com/mom-ocean/MOM6/search?q=use_kpp) |      False |       True |       True |
-| [**n_smooth**       ](https://github.com/mom-ocean/MOM6/search?q=n_smooth) |            |          3 |          3 |
-| [**match_technique**](https://github.com/mom-ocean/MOM6/search?q=match_technique) |            | 'MatchGrad<br>ient' | 'MatchGrad<br>ient' |
-| [**kpp_is_additive**](https://github.com/mom-ocean/MOM6/search?q=kpp_is_additive) |            |      False |      False |
-| [**use_cvmix_conve<br>ction**](https://github.com/mom-ocean/MOM6/search?q=use_cvmix_convection) | False |   True |       True |
+| [use_kpp            ](https://github.com/mom-ocean/MOM6/search?q=use_kpp) |       True |       True |       True |
+| [n_smooth           ](https://github.com/mom-ocean/MOM6/search?q=n_smooth) |          3 |          3 |          3 |
+| [match_technique    ](https://github.com/mom-ocean/MOM6/search?q=match_technique) | 'MatchGrad<br>ient' | 'MatchGrad<br>ient' | 'MatchGrad<br>ient' |
+| [kpp_is_additive    ](https://github.com/mom-ocean/MOM6/search?q=kpp_is_additive) |      False |      False |      False |
+| [use_cvmix_conve<br>ction](https://github.com/mom-ocean/MOM6/search?q=use_cvmix_convection) |  True |       True |       True |
 | [bbl_mixing_as_m<br>ax](https://github.com/mom-ocean/MOM6/search?q=bbl_mixing_as_max) |    False |      False |      False |
 | [**use_lotw_bbl_di<br>ffusivity**](https://github.com/mom-ocean/MOM6/search?q=use_lotw_bbl_diffusivity) |  |    True |       True |
 | [kd                 ](https://github.com/mom-ocean/MOM6/search?q=kd) |      2e-05 |      2e-05 |      2e-05 |
@@ -145,6 +145,7 @@
 | [**kh_vel_scale**   ](https://github.com/mom-ocean/MOM6/search?q=kh_vel_scale) |        0.0 |        0.0 |            |
 | [**smag_lap_const** ](https://github.com/mom-ocean/MOM6/search?q=smag_lap_const) |       0.15 |            |            |
 | [**smag_bi_const**  ](https://github.com/mom-ocean/MOM6/search?q=smag_bi_const) |       0.06 |       0.06 |            |
+| [**interp_type2**   ](https://github.com/mom-ocean/MOM6/search?q=interp_type2) |    'LMD94' |    'LMD94' |            |
 | [**simple_tke_to_k<br>d**](https://github.com/mom-ocean/MOM6/search?q=simple_tke_to_kd) |  True |       True |            |
 | [**int_tide_decay_<br>scale**](https://github.com/mom-ocean/MOM6/search?q=int_tide_decay_scale) | 300.300300<br>3003003 | 300.300300<br>3003003 |  |
 | [**kdml**           ](https://github.com/mom-ocean/MOM6/search?q=kdml) |        0.0 |        0.0 |            |
@@ -177,7 +178,6 @@
 | [**use_gm_work_bug**](https://github.com/mom-ocean/MOM6/search?q=use_gm_work_bug) |            |      False |            |
 | [**use_land_mask_f<br>or_hvisc**](https://github.com/mom-ocean/MOM6/search?q=use_land_mask_for_hvisc) |  |     True |            |
 | [**bt_thick_scheme**](https://github.com/mom-ocean/MOM6/search?q=bt_thick_scheme) |            | 'FROM_BT_C<br>ONT' |    |
-| [**interp_type2**   ](https://github.com/mom-ocean/MOM6/search?q=interp_type2) |            |    'LMD94' |            |
 | [**khtr_max**       ](https://github.com/mom-ocean/MOM6/search?q=khtr_max) |            |        0.0 |            |
 | [**maxtrunc**       ](https://github.com/mom-ocean/MOM6/search?q=maxtrunc) |            |          0 |            |
 | [**energysavedays** ](https://github.com/mom-ocean/MOM6/search?q=energysavedays) |            |        1.0 |            |
