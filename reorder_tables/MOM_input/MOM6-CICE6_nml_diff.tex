@@ -18,177 +18,199 @@
 % \newlength{\nmllen}\setlength{\nmllen}{12ex}
 
 \newcolumntype{R}{>{\raggedleft\arraybackslash}b{\nmllen}}
-\begin{tabularx}{\linewidth}{XRRR}
+\begin{tabularx}{\linewidth}{XRRRR}
 \hline
 \hiderowcolors
-\textbf{Group\quad\hfill Variable}	 & 	\textbf{MOM6-CICE6\_1deg\_jra55do\_iaf\slash MOM\_input}	 & 	\textbf{mom6-om4-025\slash MOM\_input}	 & 	\textbf{MOM6-CICE6\_1deg\_jra55do\_ryf\slash MOM\_input} \\
+\textbf{Group\quad\hfill Variable}	 & 	\textbf{mom6-om4-025\slash MOM\_input}	 & 	\textbf{MOM6-CICE6\_1deg\_jra55do\_iaf\slash MOM\_input}	 & 	\textbf{MOM6-CICE6\_1deg\_jra55do\_ryf\slash MOM\_input}	 & 	\textbf{MOM6-CICE6\_1deg\_jra55do\_ryf\_andrew\slash MOM\_input} \\
 \showrowcolors
 \hline\endfirsthead
 \hline
 \hiderowcolors
-\textbf{Group (continued)\quad\hfill Variable}	 & 	\textbf{MOM6-CICE6\_1deg\_jra55do\_iaf\slash MOM\_input}	 & 	\textbf{mom6-om4-025\slash MOM\_input}	 & 	\textbf{MOM6-CICE6\_1deg\_jra55do\_ryf\slash MOM\_input} \\
+\textbf{Group (continued)\quad\hfill Variable}	 & 	\textbf{mom6-om4-025\slash MOM\_input}	 & 	\textbf{MOM6-CICE6\_1deg\_jra55do\_iaf\slash MOM\_input}	 & 	\textbf{MOM6-CICE6\_1deg\_jra55do\_ryf\slash MOM\_input}	 & 	\textbf{MOM6-CICE6\_1deg\_jra55do\_ryf\_andrew\slash MOM\_input} \\
 \showrowcolors
 \hline\endhead
-\&\nmllink{mom6}{mom6} \hfill \nmldiffer{\nmllink{diabatic\_first}{diabatic_first}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{use\_contemp\_abssal}{use_contemp_abssal}}	 & 	False	 & 		 & 	False \\
- \hfill \nmldiffer{\nmllink{hfreeze}{hfreeze}}	 & 	\num*{10.0}{}	 & 		 & 	\num*{10.0}{} \\
- \hfill \nmldiffer{\nmllink{dtbt\_reset\_period}{dtbt_reset_period}}	 & 	\num*{0.0}{}	 & 		 & 	\num*{0.0}{} \\
- \hfill \nmldiffer{\nmllink{save\_initial\_conds}{save_initial_conds}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{grid\_rotation\_angle\_bugs}{grid_rotation_angle_bugs}}	 & 	False	 & 		 & 	False \\
- \hfill \nmldiffer{\nmllink{eqn\_of\_state}{eqn_of_state}}	 & 	'WRIGHT'	 & 		 & 	'WRIGHT' \\
- \hfill \nmldiffer{\nmllink{use\_cfc\_cap}{use_cfc_cap}}	 & 	False	 & 		 & 	False \\
- \hfill \nmldiffer{\nmllink{cfc\_bc\_file}{cfc_bc_file}}	 & 	'cfc\_atm\_20230310.nc'	 & 		 & 	'cfc\_atm\_20230310.nc' \\
- \hfill \nmldiffer{\nmllink{temp\_salt\_z\_init\_file}{temp_salt_z_init_file}}	 & 	'ocean\_temp\_salt.res.nc'	 & 	''	 & 	'ocean\_temp\_salt.res.nc' \\
- \hfill \nmldiffer{\nmllink{z\_init\_file\_ptemp\_var}{z_init_file_ptemp_var}}	 & 	'temp'	 & 	'ptemp\_an'	 & 	'temp' \\
- \hfill \nmldiffer{\nmllink{z\_init\_file\_salt\_var}{z_init_file_salt_var}}	 & 	'salt'	 & 	's\_an'	 & 	'salt' \\
- \hfill \nmldiffer{\nmllink{temp\_salt\_init\_vertical\_remap\_only}{temp_salt_init_vertical_remap_only}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{z\_init\_remap\_old\_alg}{z_init_remap_old_alg}}	 & 	False	 & 	True	 & 	False \\
- \hfill \nmldiffer{\nmllink{diag\_coord\_def\_z}{diag_coord_def_z}}	 & 	'FILE:ocean\_vgrid.nc,interfaces=zeta'	 & 		 & 	'FILE:ocean\_vgrid.nc,interfaces=zeta' \\
- \hfill \nmldiffer{\nmllink{meke\_geometric}{meke_geometric}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{meke\_equilibrium\_alt}{meke_equilibrium_alt}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{meke\_equilibrium\_restoring}{meke_equilibrium_restoring}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{meke\_restoring\_timescale}{meke_restoring_timescale}}	 & 	\num*{10000000.0}{}	 & 		 & 	\num*{10000000.0}{} \\
- \hfill \nmldiffer{\nmllink{meke\_visc\_drag}{meke_visc_drag}}	 & 	False	 & 		 & 	False \\
- \hfill \nmldiffer{\nmllink{meke\_khth\_fac}{meke_khth_fac}}	 & 	\num*{1.0}{}	 & 		 & 	\num*{1.0}{} \\
- \hfill \nmldiffer{\nmllink{meke\_khtr\_fac}{meke_khtr_fac}}	 & 	\num*{1.0}{}	 & 		 & 	\num*{1.0}{} \\
- \hfill \nmldiffer{\nmllink{meke\_min\_lscale}{meke_min_lscale}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{meke\_viscosity\_coeff\_ku}{meke_viscosity_coeff_ku}}	 & 	\num*{0.2}{}	 & 		 & 	\num*{0.2}{} \\
- \hfill \nmldiffer{\nmllink{meke\_alpha\_deform}{meke_alpha_deform}}	 & 	\num*{1.0}{}	 & 		 & 	\num*{1.0}{} \\
- \hfill \nmldiffer{\nmllink{meke\_alpha\_frict}{meke_alpha_frict}}	 & 	\num*{1.0}{}	 & 		 & 	\num*{1.0}{} \\
- \hfill \nmldiffer{\nmllink{meke\_alpha\_grid}{meke_alpha_grid}}	 & 	\num*{1.0}{}	 & 		 & 	\num*{1.0}{} \\
- \hfill \nmldiffer{\nmllink{meke\_advection\_factor}{meke_advection_factor}}	 & 	\num*{1.0}{}	 & 		 & 	\num*{1.0}{} \\
- \hfill \nmldiffer{\nmllink{depth\_scaled\_khth}{depth_scaled_khth}}	 & 	False	 & 		 & 	False \\
- \hfill \nmldiffer{\nmllink{khth\_use\_ebt\_struct}{khth_use_ebt_struct}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{khth\_slope\_cff}{khth_slope_cff}}	 & 	\num*{0.01}{}	 & 		 & 	\num*{0.01}{} \\
- \hfill \nmldiffer{\nmllink{kh\_res\_scale\_coef}{kh_res_scale_coef}}	 & 	\num*{0.4}{}	 & 		 & 	\num*{0.4}{} \\
- \hfill \nmldiffer{\nmllink{visc\_res\_scale\_coef}{visc_res_scale_coef}}	 & 	\num*{0.4}{}	 & 		 & 	\num*{0.4}{} \\
- \hfill \nmldiffer{\nmllink{khth}{khth}}	 & 	\num*{0.0}{}	 & 		 & 	\num*{0.0}{} \\
- \hfill \nmldiffer{\nmllink{khth\_max}{khth_max}}	 & 	\num*{0.0}{}	 & 		 & 	\num*{0.0}{} \\
- \hfill \nmldiffer{\nmllink{khth\_use\_fgnv\_streamfunction}{khth_use_fgnv_streamfunction}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{fgnv\_c\_min}{fgnv_c_min}}	 & 	\num*{0.01}{}	 & 		 & 	\num*{0.01}{} \\
- \hfill \nmldiffer{\nmllink{use\_kh\_in\_meke}{use_kh_in_meke}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{use\_gm\_work\_bug}{use_gm_work_bug}}	 & 	False	 & 		 & 	False \\
- \hfill \nmldiffer{\nmllink{tides}{tides}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{velocity\_tolerance}{velocity_tolerance}}	 & 	\num*{0.0001}{}	 & 		 & 	\num*{0.0001}{} \\
- \hfill \nmldiffer{\nmllink{tide\_m2}{tide_m2}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{tide\_sal\_scalar\_value}{tide_sal_scalar_value}}	 & 	\num*{0.094}{}	 & 		 & 	\num*{0.094}{} \\
- \hfill \nmldiffer{\nmllink{kh\_vel\_scale}{kh_vel_scale}}	 & 	\num*{0.0}{}	 & 		 & 	\num*{0.0}{} \\
- \hfill \nmldiffer{\nmllink{ah}{ah}}	 & 	\num*{1000000000000.0}{}	 & 		 & 	\num*{1000000000000.0}{} \\
- \hfill \nmldiffer{\nmllink{leith\_ah}{leith_ah}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{leith\_bi\_const}{leith_bi_const}}	 & 	\num*{128.0}{}	 & 		 & 	\num*{128.0}{} \\
- \hfill \nmldiffer{\nmllink{cfl\_truncate\_ramp\_time}{cfl_truncate_ramp_time}}	 & 	\num*{7200.0}{}	 & 		 & 	\num*{7200.0}{} \\
- \hfill \nmldiffer{\nmllink{bt\_thick\_scheme}{bt_thick_scheme}}	 & 	'FROM\_BT\_CONT'	 & 		 & 	'FROM\_BT\_CONT' \\
- \hfill \nmldiffer{\nmllink{use\_legacy\_diabatic\_driver}{use_legacy_diabatic_driver}}	 & 	False	 & 		 & 	False \\
- \hfill \nmldiffer{\nmllink{use\_kpp}{use_kpp}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{n\_smooth}{n_smooth}}	 & 	3	 & 		 & 	3 \\
- \hfill \nmldiffer{\nmllink{interp\_type2}{interp_type2}}	 & 	'LMD94'	 & 		 & 	'LMD94' \\
- \hfill \nmldiffer{\nmllink{match\_technique}{match_technique}}	 & 	'MatchGradient'	 & 		 & 	'MatchGradient' \\
- \hfill \nmldiffer{\nmllink{kpp\_is\_additive}{kpp_is_additive}}	 & 	False	 & 		 & 	False \\
- \hfill \nmldiffer{\nmllink{use\_cvmix\_convection}{use_cvmix_convection}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{horiz\_varying\_background}{horiz_varying_background}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{prandtl\_bkgnd}{prandtl_bkgnd}}	 & 	\num*{5.0}{}	 & 		 & 	\num*{5.0}{} \\
- \hfill \nmldiffer{\nmllink{kdml}{kdml}}	 & 	\num*{0.0}{}	 & 		 & 	\num*{0.0}{} \\
- \hfill \nmldiffer{\nmllink{kappa\_shear\_iter\_bug}{kappa_shear_iter_bug}}	 & 	False	 & 	True	 & 	False \\
- \hfill \nmldiffer{\nmllink{kappa\_shear\_all\_layer\_tke\_bug}{kappa_shear_all_layer_tke_bug}}	 & 	False	 & 	True	 & 	False \\
- \hfill \nmldiffer{\nmllink{use\_lmd94}{use_lmd94}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{n\_smooth\_ri}{n_smooth_ri}}	 & 	1	 & 		 & 	1 \\
- \hfill \nmldiffer{\nmllink{use\_cvmix\_ddiff}{use_cvmix_ddiff}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{pen\_sw\_scale}{pen_sw_scale}}	 & 	\num*{15.0}{}	 & 		 & 	\num*{15.0}{} \\
- \hfill \nmldiffer{\nmllink{pen\_sw\_frac}{pen_sw_frac}}	 & 	\num*{0.42}{}	 & 		 & 	\num*{0.42}{} \\
- \hfill \nmldiffer{\nmllink{khtr\_min}{khtr_min}}	 & 	\num*{50.0}{}	 & 		 & 	\num*{50.0}{} \\
- \hfill \nmldiffer{\nmllink{khtr\_max}{khtr_max}}	 & 	\num*{0.0}{}	 & 		 & 	\num*{0.0}{} \\
- \hfill \nmldiffer{\nmllink{max\_tr\_diffusion\_cfl}{max_tr_diffusion_cfl}}	 & 	\num*{2.0}{}	 & 		 & 	\num*{2.0}{} \\
- \hfill \nmldiffer{\nmllink{use\_neutral\_diffusion}{use_neutral_diffusion}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{ndiff\_interior\_only}{ndiff_interior_only}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{use\_horizontal\_boundary\_diffusion}{use_horizontal_boundary_diffusion}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{hbd\_linear\_transition}{hbd_linear_transition}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{restart\_control}{restart_control}}	 & 	3	 & 		 & 	3 \\
- \hfill \nmldiffer{\nmllink{ocean\_surface\_stagger}{ocean_surface_stagger}}	 & 	'A'	 & 		 & 	'A' \\
- \hfill \nmldiffer{\nmllink{restore\_salinity}{restore_salinity}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{latent\_heat\_fusion}{latent_heat_fusion}}	 & 	\num*{333700.0}{}	 & 		 & 	\num*{333700.0}{} \\
- \hfill \nmldiffer{\nmllink{latent\_heat\_vaporization}{latent_heat_vaporization}}	 & 	\num*{2501000.0}{}	 & 		 & 	\num*{2501000.0}{} \\
- \hfill \nmldiffer{\nmllink{adjust\_net\_srestore\_to\_zero}{adjust_net_srestore_to_zero}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{adjust\_net\_fresh\_water\_to\_zero}{adjust_net_fresh_water_to_zero}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{enthalpy\_from\_coupler}{enthalpy_from_coupler}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{fluxconst}{fluxconst}}	 & 	\num*{0.11}{}	 & 		 & 	\num*{0.11}{} \\
- \hfill \nmldiffer{\nmllink{salt\_restore\_file}{salt_restore_file}}	 & 	'salt\_sfc\_restore.nc'	 & 		 & 	'salt\_sfc\_restore.nc' \\
- \hfill \nmldiffer{\nmllink{srestore\_as\_sflux}{srestore_as_sflux}}	 & 	True	 & 		 & 	True \\
- \hfill \nmldiffer{\nmllink{max\_delta\_srestore}{max_delta_srestore}}	 & 	\num*{0.5}{}	 & 		 & 	\num*{0.5}{} \\
- \hfill \nmldiffer{\nmllink{mask\_srestore\_under\_ice}{mask_srestore_under_ice}}	 & 	False	 & 		 & 	False \\
- \hfill \nmldiffer{\nmllink{debug}{debug}}	 & 	False	 & 		 & 	False \\
- \hfill \nmldiffer{\nmllink{max\_ent\_it}{max_ent_it}}	 & 	20	 & 		 & 	20 \\
- \hfill \nmldiffer{\nmllink{tolerance\_ent}{tolerance_ent}}	 & 	\num*{1e-5}{}	 & 		 & 	\num*{1e-5}{} \\
- \hfill \nmldiffer{\nmllink{hmix\_min}{hmix_min}}	 & 	\num*{2.0}{}	 & 		 & 	\num*{2.0}{} \\
- \hfill \nmldiffer{\nmllink{thermo\_spans\_coupling}{thermo_spans_coupling}}	 & 		 & 	False	 & 	 \\
- \hfill \nmldiffer{\nmllink{do\_geothermal}{do_geothermal}}	 & 		 & 	False	 & 	 \\
- \hfill \nmldiffer{\nmllink{bad\_val\_ssh\_max}{bad_val_ssh_max}}	 & 		 & 	\num*{20.0}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{bad\_val\_sss\_max}{bad_val_sss_max}}	 & 		 & 	\num*{45.0}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{bad\_val\_sst\_max}{bad_val_sst_max}}	 & 		 & 	\num*{45.0}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{bad\_val\_sst\_min}{bad_val_sst_min}}	 & 		 & 	\num*{-2.1}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{write\_geom}{write_geom}}	 & 		 & 	1	 & 	 \\
- \hfill \nmldiffer{\nmllink{topo\_edits\_file}{topo_edits_file}}	 & 		 & 	''	 & 	 \\
- \hfill \nmldiffer{\nmllink{masking\_depth}{masking_depth}}	 & 		 & 	\num*{-9999.0}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{channel\_list\_file}{channel_list_file}}	 & 		 & 	'MOM\_channels\_global\_025'	 & 	 \\
- \hfill \nmldiffer{\nmllink{boundary\_extrapolation}{boundary_extrapolation}}	 & 		 & 	True	 & 	 \\
- \hfill \nmldiffer{\nmllink{regrid\_compressibility\_fraction}{regrid_compressibility_fraction}}	 & 		 & 	\num*{0.01}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{maximum\_int\_depth\_config}{maximum_int_depth_config}}	 & 		 & 	'FNC1:5,8000.0,1.0,.01'	 & 	 \\
- \hfill \nmldiffer{\nmllink{max\_layer\_thickness\_config}{max_layer_thickness_config}}	 & 		 & 	'FNC1:400,31000.0,0.1,.01'	 & 	 \\
- \hfill \nmldiffer{\nmllink{num\_diag\_coords}{num_diag_coords}}	 & 		 & 	1	 & 	 \\
- \hfill \nmldiffer{\nmllink{diag\_coords}{diag_coords}}	 & 		 & 	'z Z ZSTAR'	 & 	 \\
- \hfill \nmldiffer{\nmllink{diag\_coord\_def\_rho2}{diag_coord_def_rho2}}	 & 		 & 	'RFNC1:35,999.5,1028,1028.5,8.,1038.,0.0078125'	 & 	 \\
- \hfill \nmldiffer{\nmllink{meke\_bgsrc}{meke_bgsrc}}	 & 		 & 	\num*{0.0}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{khtr\_slope\_cff}{khtr_slope_cff}}	 & 		 & 	\num*{0.0}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{kv\_bbl\_min}{kv_bbl_min}}	 & 		 & 	\num*{0.0001}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{kv\_tbl\_min}{kv_tbl_min}}	 & 		 & 	\num*{0.0001}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{khth\_max\_cfl}{khth_max_cfl}}	 & 		 & 	\num*{0.8}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{eta\_tolerance\_aux}{eta_tolerance_aux}}	 & 		 & 	\num*{0.001}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{coriolis\_scheme}{coriolis_scheme}}	 & 		 & 	'SADOURNY75\_ENERGY'	 & 	 \\
- \hfill \nmldiffer{\nmllink{smagorinsky\_ah}{smagorinsky_ah}}	 & 		 & 	False	 & 	 \\
- \hfill \nmldiffer{\nmllink{dynamic\_surface\_pressure}{dynamic_surface_pressure}}	 & 		 & 	False	 & 	 \\
- \hfill \nmldiffer{\nmllink{bt\_use\_old\_coriolis\_bracket\_bug}{bt_use_old_coriolis_bracket_bug}}	 & 		 & 	False	 & 	 \\
- \hfill \nmldiffer{\nmllink{mle\_use\_pbl\_mld}{mle_use_pbl_mld}}	 & 		 & 	False	 & 	 \\
- \hfill \nmldiffer{\nmllink{energetics\_sfc\_pbl}{energetics_sfc_pbl}}	 & 		 & 	False	 & 	 \\
- \hfill \nmldiffer{\nmllink{epbl\_is\_additive}{epbl_is_additive}}	 & 		 & 	True	 & 	 \\
- \hfill \nmldiffer{\nmllink{int\_tide\_dissipation}{int_tide_dissipation}}	 & 		 & 	False	 & 	 \\
- \hfill \nmldiffer{\nmllink{int\_tide\_profile}{int_tide_profile}}	 & 		 & 	'POLZIN\_09'	 & 	 \\
- \hfill \nmldiffer{\nmllink{kappa\_itides}{kappa_itides}}	 & 		 & 	\num*{0.000628319}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{kappa\_h2\_factor}{kappa_h2_factor}}	 & 		 & 	\num*{0.84}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{tke\_itide\_max}{tke_itide_max}}	 & 		 & 	\num*{0.1}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{tideamp\_file}{tideamp_file}}	 & 		 & 	'tidal\_amplitude.v20140616.nc'	 & 	 \\
- \hfill \nmldiffer{\nmllink{h2\_file}{h2_file}}	 & 		 & 	'ocean\_topog.nc'	 & 	 \\
- \hfill \nmldiffer{\nmllink{henyey\_igw\_background}{henyey_igw_background}}	 & 		 & 	False	 & 	 \\
- \hfill \nmldiffer{\nmllink{use\_jackson\_param}{use_jackson_param}}	 & 		 & 	False	 & 	 \\
- \hfill \nmldiffer{\nmllink{var\_pen\_sw}{var_pen_sw}}	 & 		 & 	False	 & 	 \\
- \hfill \nmldiffer{\nmllink{chl\_file}{chl_file}}	 & 		 & 	'seawifs-clim-1997-2010.1440x1080.v20180328.nc'	 & 	 \\
- \hfill \nmldiffer{\nmllink{chl\_varname}{chl_varname}}	 & 		 & 	'chlor\_a'	 & 	 \\
- \hfill \nmldiffer{\nmllink{pen\_sw\_nbands}{pen_sw_nbands}}	 & 		 & 	1	 & 	 \\
- \hfill \nmldiffer{\nmllink{max\_p\_surf}{max_p_surf}}	 & 		 & 	\num*{-1.0}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{cd\_tides}{cd_tides}}	 & 		 & 	\num*{0.0001}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{read\_tideamp}{read_tideamp}}	 & 		 & 	False	 & 	 \\
- \hfill \nmldiffer{\nmllink{use\_rigid\_sea\_ice}{use_rigid_sea_ice}}	 & 		 & 	False	 & 	 \\
- \hfill \nmldiffer{\nmllink{temp\_z\_init\_file}{temp_z_init_file}}	 & 		 & 	'woa13\_decav\_ptemp\_monthly\_fulldepth\_01.nc'	 & 	 \\
- \hfill \nmldiffer{\nmllink{salt\_z\_init\_file}{salt_z_init_file}}	 & 		 & 	'woa13\_decav\_s\_monthly\_fulldepth\_01.nc'	 & 	 \\
- \hfill \nmldiffer{\nmllink{geothermal\_scale}{geothermal_scale}}	 & 		 & 	\num*{1.0}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{geothermal\_file}{geothermal_file}}	 & 		 & 	'geothermal\_davies2013\_v1.nc'	 & 	 \\
- \hfill \nmldiffer{\nmllink{geothermal\_varname}{geothermal_varname}}	 & 		 & 	'geothermal\_hf'	 & 	 \\
- \hfill \nmldiffer{\nmllink{ml\_omega\_frac}{ml_omega_frac}}	 & 		 & 	\num*{0.001}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{tke\_decay}{tke_decay}}	 & 		 & 	\num*{0.01}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{epbl\_mstar\_scheme}{epbl_mstar_scheme}}	 & 		 & 	'OM4'	 & 	 \\
- \hfill \nmldiffer{\nmllink{mstar\_cap}{mstar_cap}}	 & 		 & 	\num*{10.0}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{mstar2\_coef1}{mstar2_coef1}}	 & 		 & 	\num*{0.29}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{mstar2\_coef2}{mstar2_coef2}}	 & 		 & 	\num*{0.152}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{nstar}{nstar}}	 & 		 & 	\num*{0.06}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{mstar\_conv\_adj}{mstar_conv_adj}}	 & 		 & 	\num*{0.667}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{use\_mld\_iteration}{use_mld_iteration}}	 & 		 & 	True	 & 	 \\
- \hfill \nmldiffer{\nmllink{epbl\_transition\_scale}{epbl_transition_scale}}	 & 		 & 	\num*{0.01}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{mix\_len\_exponent}{mix_len_exponent}}	 & 		 & 	\num*{1.0}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{use\_la\_li2016}{use_la_li2016}}	 & 		 & 	True	 & 	 \\
- \hfill \nmldiffer{\nmllink{epbl\_langmuir\_scheme}{epbl_langmuir_scheme}}	 & 		 & 	'ADDITIVE'	 & 	 \\
- \hfill \nmldiffer{\nmllink{lt\_enhance\_coef}{lt_enhance_coef}}	 & 		 & 	\num*{0.044}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{lt\_enhance\_exp}{lt_enhance_exp}}	 & 		 & 	\num*{-1.5}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{lt\_mod\_lac1}{lt_mod_lac1}}	 & 		 & 	\num*{0.0}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{lt\_mod\_lac4}{lt_mod_lac4}}	 & 		 & 	\num*{0.0}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{lt\_mod\_lac5}{lt_mod_lac5}}	 & 		 & 	\num*{0.22}{}	 & 	 \\
- \hfill \nmldiffer{\nmllink{sea\_ice\_rigid\_mass}{sea_ice_rigid_mass}}	 & 		 & 	\num*{100.0}{}	 & 	 \\
+\&\nmllink{mom6}{mom6} \hfill \nmldiffer{\nmllink{diabatic\_first}{diabatic_first}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{hfreeze}{hfreeze}}	 & 		 & 	\num*{10.0}{}	 & 	\num*{10.0}{}	 & 	\num*{10.0}{} \\
+ \hfill \nmldiffer{\nmllink{dtbt\_reset\_period}{dtbt_reset_period}}	 & 		 & 	\num*{0.0}{}	 & 	\num*{0.0}{}	 & 	\num*{0.0}{} \\
+ \hfill \nmldiffer{\nmllink{bad\_val\_ssh\_max}{bad_val_ssh_max}}	 & 	\num*{20.0}{}	 & 		 & 		 & 	\num*{50.0}{} \\
+ \hfill \nmldiffer{\nmllink{bad\_val\_sss\_max}{bad_val_sss_max}}	 & 	\num*{45.0}{}	 & 		 & 		 & 	\num*{75.0}{} \\
+ \hfill \nmldiffer{\nmllink{bad\_val\_sst\_max}{bad_val_sst_max}}	 & 	\num*{45.0}{}	 & 		 & 		 & 	\num*{55.0}{} \\
+ \hfill \nmldiffer{\nmllink{bad\_val\_sst\_min}{bad_val_sst_min}}	 & 	\num*{-2.1}{}	 & 		 & 		 & 	\num*{-3.0}{} \\
+ \hfill \nmldiffer{\nmllink{save\_initial\_conds}{save_initial_conds}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{temp\_salt\_z\_init\_file}{temp_salt_z_init_file}}	 & 	''	 & 	'ocean\_temp\_salt.res.nc'	 & 	'ocean\_temp\_salt.res.nc'	 & 	'ocean\_temp\_salt.res.nc' \\
+ \hfill \nmldiffer{\nmllink{z\_init\_file\_ptemp\_var}{z_init_file_ptemp_var}}	 & 	'ptemp\_an'	 & 	'temp'	 & 	'temp'	 & 	'temp' \\
+ \hfill \nmldiffer{\nmllink{temp\_salt\_init\_vertical\_remap\_only}{temp_salt_init_vertical_remap_only}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{diag\_coord\_def\_z}{diag_coord_def_z}}	 & 		 & 	'FILE:ocean\_vgrid.nc,interfaces=zeta'	 & 	'FILE:ocean\_vgrid.nc,interfaces=zeta'	 & 	'FILE:ocean\_vgrid.nc,interfaces=zeta' \\
+ \hfill \nmldiffer{\nmllink{meke\_geometric}{meke_geometric}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{meke\_equilibrium\_alt}{meke_equilibrium_alt}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{meke\_equilibrium\_restoring}{meke_equilibrium_restoring}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{meke\_restoring\_timescale}{meke_restoring_timescale}}	 & 		 & 	\num*{10000000.0}{}	 & 	\num*{10000000.0}{}	 & 	\num*{10000000.0}{} \\
+ \hfill \nmldiffer{\nmllink{meke\_visc\_drag}{meke_visc_drag}}	 & 		 & 	False	 & 	False	 & 	False \\
+ \hfill \nmldiffer{\nmllink{meke\_khth\_fac}{meke_khth_fac}}	 & 		 & 	\num*{1.0}{}	 & 	\num*{1.0}{}	 & 	\num*{1.0}{} \\
+ \hfill \nmldiffer{\nmllink{meke\_khtr\_fac}{meke_khtr_fac}}	 & 		 & 	\num*{1.0}{}	 & 	\num*{1.0}{}	 & 	\num*{1.0}{} \\
+ \hfill \nmldiffer{\nmllink{meke\_min\_lscale}{meke_min_lscale}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{meke\_viscosity\_coeff\_ku}{meke_viscosity_coeff_ku}}	 & 		 & 	\num*{0.2}{}	 & 	\num*{0.2}{}	 & 	\num*{0.2}{} \\
+ \hfill \nmldiffer{\nmllink{meke\_alpha\_deform}{meke_alpha_deform}}	 & 		 & 	\num*{1.0}{}	 & 	\num*{1.0}{}	 & 	\num*{1.0}{} \\
+ \hfill \nmldiffer{\nmllink{meke\_alpha\_frict}{meke_alpha_frict}}	 & 		 & 	\num*{1.0}{}	 & 	\num*{1.0}{}	 & 	\num*{1.0}{} \\
+ \hfill \nmldiffer{\nmllink{meke\_alpha\_grid}{meke_alpha_grid}}	 & 		 & 	\num*{1.0}{}	 & 	\num*{1.0}{}	 & 	\num*{1.0}{} \\
+ \hfill \nmldiffer{\nmllink{meke\_advection\_factor}{meke_advection_factor}}	 & 		 & 	\num*{1.0}{}	 & 	\num*{1.0}{}	 & 	\num*{1.0}{} \\
+ \hfill \nmldiffer{\nmllink{khth\_use\_ebt\_struct}{khth_use_ebt_struct}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{khth\_slope\_cff}{khth_slope_cff}}	 & 		 & 	\num*{0.01}{}	 & 	\num*{0.01}{}	 & 	\num*{0.01}{} \\
+ \hfill \nmldiffer{\nmllink{kh\_res\_scale\_coef}{kh_res_scale_coef}}	 & 		 & 	\num*{0.4}{}	 & 	\num*{0.4}{}	 & 	\num*{0.4}{} \\
+ \hfill \nmldiffer{\nmllink{khth\_use\_fgnv\_streamfunction}{khth_use_fgnv_streamfunction}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{fgnv\_c\_min}{fgnv_c_min}}	 & 		 & 	\num*{0.01}{}	 & 	\num*{0.01}{}	 & 	\num*{0.01}{} \\
+ \hfill \nmldiffer{\nmllink{use\_kh\_in\_meke}{use_kh_in_meke}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{tides}{tides}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{velocity\_tolerance}{velocity_tolerance}}	 & 		 & 	\num*{0.0001}{}	 & 	\num*{0.0001}{}	 & 	\num*{0.0001}{} \\
+ \hfill \nmldiffer{\nmllink{tide\_m2}{tide_m2}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{tide\_sal\_scalar\_value}{tide_sal_scalar_value}}	 & 		 & 	\num*{0.094}{}	 & 	\num*{0.094}{}	 & 	\num*{0.094}{} \\
+ \hfill \nmldiffer{\nmllink{ah}{ah}}	 & 		 & 	\num*{1000000000000.0}{}	 & 	\num*{1000000000000.0}{}	 & 	\num*{1000000000000.0}{} \\
+ \hfill \nmldiffer{\nmllink{leith\_ah}{leith_ah}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{leith\_bi\_const}{leith_bi_const}}	 & 		 & 	\num*{128.0}{}	 & 	\num*{128.0}{}	 & 	\num*{128.0}{} \\
+ \hfill \nmldiffer{\nmllink{cfl\_truncate\_ramp\_time}{cfl_truncate_ramp_time}}	 & 		 & 	\num*{7200.0}{}	 & 	\num*{7200.0}{}	 & 	\num*{7200.0}{} \\
+ \hfill \nmldiffer{\nmllink{use\_legacy\_diabatic\_driver}{use_legacy_diabatic_driver}}	 & 		 & 	False	 & 	False	 & 	False \\
+ \hfill \nmldiffer{\nmllink{use\_kpp}{use_kpp}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{n\_smooth}{n_smooth}}	 & 		 & 	3	 & 	3	 & 	3 \\
+ \hfill \nmldiffer{\nmllink{match\_technique}{match_technique}}	 & 		 & 	'MatchGradient'	 & 	'MatchGradient'	 & 	'MatchGradient' \\
+ \hfill \nmldiffer{\nmllink{kpp\_is\_additive}{kpp_is_additive}}	 & 		 & 	False	 & 	False	 & 	False \\
+ \hfill \nmldiffer{\nmllink{use\_cvmix\_convection}{use_cvmix_convection}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{horiz\_varying\_background}{horiz_varying_background}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{prandtl\_bkgnd}{prandtl_bkgnd}}	 & 		 & 	\num*{5.0}{}	 & 	\num*{5.0}{}	 & 	\num*{5.0}{} \\
+ \hfill \nmldiffer{\nmllink{use\_lmd94}{use_lmd94}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{n\_smooth\_ri}{n_smooth_ri}}	 & 		 & 	1	 & 	1	 & 	1 \\
+ \hfill \nmldiffer{\nmllink{use\_cvmix\_ddiff}{use_cvmix_ddiff}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{pen\_sw\_scale}{pen_sw_scale}}	 & 		 & 	\num*{15.0}{}	 & 	\num*{15.0}{}	 & 	\num*{15.0}{} \\
+ \hfill \nmldiffer{\nmllink{pen\_sw\_frac}{pen_sw_frac}}	 & 		 & 	\num*{0.42}{}	 & 	\num*{0.42}{}	 & 	\num*{0.42}{} \\
+ \hfill \nmldiffer{\nmllink{khtr\_min}{khtr_min}}	 & 		 & 	\num*{50.0}{}	 & 	\num*{50.0}{}	 & 	\num*{50.0}{} \\
+ \hfill \nmldiffer{\nmllink{max\_tr\_diffusion\_cfl}{max_tr_diffusion_cfl}}	 & 		 & 	\num*{2.0}{}	 & 	\num*{2.0}{}	 & 	\num*{2.0}{} \\
+ \hfill \nmldiffer{\nmllink{use\_neutral\_diffusion}{use_neutral_diffusion}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{ndiff\_interior\_only}{ndiff_interior_only}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{use\_horizontal\_boundary\_diffusion}{use_horizontal_boundary_diffusion}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{hbd\_linear\_transition}{hbd_linear_transition}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{restart\_control}{restart_control}}	 & 		 & 	3	 & 	3	 & 	3 \\
+ \hfill \nmldiffer{\nmllink{ocean\_surface\_stagger}{ocean_surface_stagger}}	 & 		 & 	'A'	 & 	'A'	 & 	'A' \\
+ \hfill \nmldiffer{\nmllink{restore\_salinity}{restore_salinity}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{latent\_heat\_fusion}{latent_heat_fusion}}	 & 		 & 	\num*{333700.0}{}	 & 	\num*{333700.0}{}	 & 	\num*{333700.0}{} \\
+ \hfill \nmldiffer{\nmllink{latent\_heat\_vaporization}{latent_heat_vaporization}}	 & 		 & 	\num*{2501000.0}{}	 & 	\num*{2501000.0}{}	 & 	\num*{2501000.0}{} \\
+ \hfill \nmldiffer{\nmllink{adjust\_net\_fresh\_water\_to\_zero}{adjust_net_fresh_water_to_zero}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{enthalpy\_from\_coupler}{enthalpy_from_coupler}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{fluxconst}{fluxconst}}	 & 		 & 	\num*{0.11}{}	 & 	\num*{0.11}{}	 & 	\num*{0.11}{} \\
+ \hfill \nmldiffer{\nmllink{salt\_restore\_file}{salt_restore_file}}	 & 		 & 	'salt\_sfc\_restore.nc'	 & 	'salt\_sfc\_restore.nc'	 & 	'salt\_sfc\_restore.nc' \\
+ \hfill \nmldiffer{\nmllink{srestore\_as\_sflux}{srestore_as_sflux}}	 & 		 & 	True	 & 	True	 & 	True \\
+ \hfill \nmldiffer{\nmllink{max\_delta\_srestore}{max_delta_srestore}}	 & 		 & 	\num*{0.5}{}	 & 	\num*{0.5}{}	 & 	\num*{0.5}{} \\
+ \hfill \nmldiffer{\nmllink{fatal\_unused\_params}{fatal_unused_params}}	 & 		 & 		 & 		 & 	True \\
+ \hfill \nmldiffer{\nmllink{thermo\_spans\_coupling}{thermo_spans_coupling}}	 & 	False	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{do\_geothermal}{do_geothermal}}	 & 	False	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{min\_salinity}{min_salinity}}	 & 	\num*{0.0}{}	 & 	\num*{0.0}{}	 & 	\num*{0.0}{}	 & 	 \\
+ \hfill \nmldiffer{\nmllink{use\_psurf\_in\_eos}{use_psurf_in_eos}}	 & 	True	 & 	True	 & 	True	 & 	 \\
+ \hfill \nmldiffer{\nmllink{default\_2018\_answers}{default_2018_answers}}	 & 	False	 & 	False	 & 	False	 & 	 \\
+ \hfill \nmldiffer{\nmllink{write\_geom}{write_geom}}	 & 	1	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{nihalo}{nihalo}}	 & 	4	 & 	4	 & 	4	 & 	 \\
+ \hfill \nmldiffer{\nmllink{njhalo}{njhalo}}	 & 	4	 & 	4	 & 	4	 & 	 \\
+ \hfill \nmldiffer{\nmllink{topo\_file}{topo_file}}	 & 	'topog.nc'	 & 	'topog.nc'	 & 	'topog.nc'	 & 	 \\
+ \hfill \nmldiffer{\nmllink{topo\_edits\_file}{topo_edits_file}}	 & 	''	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{masking\_depth}{masking_depth}}	 & 	\num*{-9999.0}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{channel\_list\_file}{channel_list_file}}	 & 	'MOM\_channels\_global\_025'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{coord\_config}{coord_config}}	 & 	'none'	 & 	'none'	 & 	'none'	 & 	 \\
+ \hfill \nmldiffer{\nmllink{remap\_uv\_using\_old\_alg}{remap_uv_using_old_alg}}	 & 	False	 & 	False	 & 	False	 & 	 \\
+ \hfill \nmldiffer{\nmllink{boundary\_extrapolation}{boundary_extrapolation}}	 & 	True	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{regrid\_compressibility\_fraction}{regrid_compressibility_fraction}}	 & 	\num*{0.01}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{maximum\_int\_depth\_config}{maximum_int_depth_config}}	 & 	'FNC1:5,8000.0,1.0,.01'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{max\_layer\_thickness\_config}{max_layer_thickness_config}}	 & 	'FNC1:400,31000.0,0.1,.01'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{num\_diag\_coords}{num_diag_coords}}	 & 	1	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{diag\_coords}{diag_coords}}	 & 	'z Z ZSTAR'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{diag\_coord\_def\_rho2}{diag_coord_def_rho2}}	 & 	'RFNC1:35,999.5,1028,1028.5,8.,1038.,0.0078125'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{meke\_bgsrc}{meke_bgsrc}}	 & 	\num*{0.0}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{khtr\_slope\_cff}{khtr_slope_cff}}	 & 	\num*{0.0}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{interpolate\_res\_fn}{interpolate_res_fn}}	 & 	False	 & 	False	 & 	False	 & 	 \\
+ \hfill \nmldiffer{\nmllink{gill\_equatorial\_ld}{gill_equatorial_ld}}	 & 	True	 & 	True	 & 	True	 & 	 \\
+ \hfill \nmldiffer{\nmllink{prandtl\_turb}{prandtl_turb}}	 & 	\num*{1.0}{}	 & 	\num*{1.0}{}	 & 	\num*{1.0}{}	 & 	 \\
+ \hfill \nmldiffer{\nmllink{bbl\_use\_eos}{bbl_use_eos}}	 & 	True	 & 	True	 & 	True	 & 	 \\
+ \hfill \nmldiffer{\nmllink{kv\_bbl\_min}{kv_bbl_min}}	 & 	\num*{0.0001}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{kv\_tbl\_min}{kv_tbl_min}}	 & 	\num*{0.0001}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{khth\_max\_cfl}{khth_max_cfl}}	 & 	\num*{0.8}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{eta\_tolerance\_aux}{eta_tolerance_aux}}	 & 	\num*{0.001}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{coriolis\_scheme}{coriolis_scheme}}	 & 	'SADOURNY75\_ENERGY'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{ah\_vel\_scale}{ah_vel_scale}}	 & 	\num*{0.0}{}	 & 	\num*{0.0}{}	 & 	\num*{0.0}{}	 & 	 \\
+ \hfill \nmldiffer{\nmllink{smagorinsky\_ah}{smagorinsky_ah}}	 & 	False	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{use\_land\_mask\_for\_hvisc}{use_land_mask_for_hvisc}}	 & 	True	 & 	True	 & 	True	 & 	 \\
+ \hfill \nmldiffer{\nmllink{smag\_bi\_const}{smag_bi_const}}	 & 	\num*{0.06}{}	 & 	\num*{0.06}{}	 & 	\num*{0.06}{}	 & 	 \\
+ \hfill \nmldiffer{\nmllink{dynamic\_surface\_pressure}{dynamic_surface_pressure}}	 & 	False	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{bt\_use\_old\_coriolis\_bracket\_bug}{bt_use_old_coriolis_bracket_bug}}	 & 	False	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{mle\_use\_pbl\_mld}{mle_use_pbl_mld}}	 & 	False	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{energetics\_sfc\_pbl}{energetics_sfc_pbl}}	 & 	False	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{epbl\_is\_additive}{epbl_is_additive}}	 & 	True	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{simple\_tke\_to\_kd}{simple_tke_to_kd}}	 & 	True	 & 	True	 & 	True	 & 	 \\
+ \hfill \nmldiffer{\nmllink{int\_tide\_dissipation}{int_tide_dissipation}}	 & 	False	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{int\_tide\_profile}{int_tide_profile}}	 & 	'POLZIN\_09'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{int\_tide\_decay\_scale}{int_tide_decay_scale}}	 & 	\num*{300.3003003003003}{}	 & 	\num*{300.3003003003003}{}	 & 	\num*{300.3003003003003}{}	 & 	 \\
+ \hfill \nmldiffer{\nmllink{kappa\_itides}{kappa_itides}}	 & 	\num*{0.000628319}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{kappa\_h2\_factor}{kappa_h2_factor}}	 & 	\num*{0.84}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{tke\_itide\_max}{tke_itide_max}}	 & 	\num*{0.1}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{tideamp\_file}{tideamp_file}}	 & 	'tidal\_amplitude.v20140616.nc'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{h2\_file}{h2_file}}	 & 	'ocean\_topog.nc'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{henyey\_igw\_background}{henyey_igw_background}}	 & 	False	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{use\_jackson\_param}{use_jackson_param}}	 & 	False	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{max\_rino\_it}{max_rino_it}}	 & 	25	 & 	25	 & 	25	 & 	 \\
+ \hfill \nmldiffer{\nmllink{kappa\_shear\_iter\_bug}{kappa_shear_iter_bug}}	 & 	True	 & 	False	 & 	False	 & 	 \\
+ \hfill \nmldiffer{\nmllink{kappa\_shear\_all\_layer\_tke\_bug}{kappa_shear_all_layer_tke_bug}}	 & 	True	 & 	False	 & 	False	 & 	 \\
+ \hfill \nmldiffer{\nmllink{var\_pen\_sw}{var_pen_sw}}	 & 	False	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{chl\_file}{chl_file}}	 & 	'seawifs-clim-1997-2010.1440x1080.v20180328.nc'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{chl\_varname}{chl_varname}}	 & 	'chlor\_a'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{pen\_sw\_nbands}{pen_sw_nbands}}	 & 	1	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{maxtrunc}{maxtrunc}}	 & 	0	 & 	0	 & 	0	 & 	 \\
+ \hfill \nmldiffer{\nmllink{energysavedays}{energysavedays}}	 & 	\num*{1.0}{}	 & 	\num*{1.0}{}	 & 	\num*{1.0}{}	 & 	 \\
+ \hfill \nmldiffer{\nmllink{max\_p\_surf}{max_p_surf}}	 & 	\num*{-1.0}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{cd\_tides}{cd_tides}}	 & 	\num*{0.0001}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{read\_tideamp}{read_tideamp}}	 & 	False	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{fix\_ustar\_gustless\_bug}{fix_ustar_gustless_bug}}	 & 	True	 & 	True	 & 	True	 & 	 \\
+ \hfill \nmldiffer{\nmllink{use\_rigid\_sea\_ice}{use_rigid_sea_ice}}	 & 	False	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{temp\_z\_init\_file}{temp_z_init_file}}	 & 	'woa13\_decav\_ptemp\_monthly\_fulldepth\_01.nc'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{salt\_z\_init\_file}{salt_z_init_file}}	 & 	'woa13\_decav\_s\_monthly\_fulldepth\_01.nc'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{z\_init\_file\_salt\_var}{z_init_file_salt_var}}	 & 	's\_an'	 & 	'salt'	 & 	'salt'	 & 	 \\
+ \hfill \nmldiffer{\nmllink{z\_init\_remap\_old\_alg}{z_init_remap_old_alg}}	 & 	True	 & 	False	 & 	False	 & 	 \\
+ \hfill \nmldiffer{\nmllink{geothermal\_scale}{geothermal_scale}}	 & 	\num*{1.0}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{geothermal\_file}{geothermal_file}}	 & 	'geothermal\_davies2013\_v1.nc'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{geothermal\_varname}{geothermal_varname}}	 & 	'geothermal\_hf'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{ml\_omega\_frac}{ml_omega_frac}}	 & 	\num*{0.001}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{tke\_decay}{tke_decay}}	 & 	\num*{0.01}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{epbl\_mstar\_scheme}{epbl_mstar_scheme}}	 & 	'OM4'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{mstar\_cap}{mstar_cap}}	 & 	\num*{10.0}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{mstar2\_coef1}{mstar2_coef1}}	 & 	\num*{0.29}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{mstar2\_coef2}{mstar2_coef2}}	 & 	\num*{0.152}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{nstar}{nstar}}	 & 	\num*{0.06}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{mstar\_conv\_adj}{mstar_conv_adj}}	 & 	\num*{0.667}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{use\_mld\_iteration}{use_mld_iteration}}	 & 	True	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{epbl\_transition\_scale}{epbl_transition_scale}}	 & 	\num*{0.01}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{mix\_len\_exponent}{mix_len_exponent}}	 & 	\num*{1.0}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{use\_la\_li2016}{use_la_li2016}}	 & 	True	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{epbl\_langmuir\_scheme}{epbl_langmuir_scheme}}	 & 	'ADDITIVE'	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{lt\_enhance\_coef}{lt_enhance_coef}}	 & 	\num*{0.044}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{lt\_enhance\_exp}{lt_enhance_exp}}	 & 	\num*{-1.5}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{lt\_mod\_lac1}{lt_mod_lac1}}	 & 	\num*{0.0}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{lt\_mod\_lac4}{lt_mod_lac4}}	 & 	\num*{0.0}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{lt\_mod\_lac5}{lt_mod_lac5}}	 & 	\num*{0.22}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{sea\_ice\_rigid\_mass}{sea_ice_rigid_mass}}	 & 	\num*{100.0}{}	 & 		 & 		 & 	 \\
+ \hfill \nmldiffer{\nmllink{use\_contemp\_abssal}{use_contemp_abssal}}	 & 		 & 	False	 & 	False	 & 	 \\
+ \hfill \nmldiffer{\nmllink{grid\_rotation\_angle\_bugs}{grid_rotation_angle_bugs}}	 & 		 & 	False	 & 	False	 & 	 \\
+ \hfill \nmldiffer{\nmllink{eqn\_of\_state}{eqn_of_state}}	 & 		 & 	'WRIGHT'	 & 	'WRIGHT'	 & 	 \\
+ \hfill \nmldiffer{\nmllink{use\_cfc\_cap}{use_cfc_cap}}	 & 		 & 	False	 & 	False	 & 	 \\
+ \hfill \nmldiffer{\nmllink{cfc\_bc\_file}{cfc_bc_file}}	 & 		 & 	'cfc\_atm\_20230310.nc'	 & 	'cfc\_atm\_20230310.nc'	 & 	 \\
+ \hfill \nmldiffer{\nmllink{depth\_scaled\_khth}{depth_scaled_khth}}	 & 		 & 	False	 & 	False	 & 	 \\
+ \hfill \nmldiffer{\nmllink{visc\_res\_scale\_coef}{visc_res_scale_coef}}	 & 		 & 	\num*{0.4}{}	 & 	\num*{0.4}{}	 & 	 \\
+ \hfill \nmldiffer{\nmllink{khth}{khth}}	 & 		 & 	\num*{0.0}{}	 & 	\num*{0.0}{}	 & 	 \\
+ \hfill \nmldiffer{\nmllink{khth\_max}{khth_max}}	 & 		 & 	\num*{0.0}{}	 & 	\num*{0.0}{}	 & 	 \\
+ \hfill \nmldiffer{\nmllink{use\_gm\_work\_bug}{use_gm_work_bug}}	 & 		 & 	False	 & 	False	 & 	 \\
+ \hfill \nmldiffer{\nmllink{kh\_vel\_scale}{kh_vel_scale}}	 & 		 & 	\num*{0.0}{}	 & 	\num*{0.0}{}	 & 	 \\
+ \hfill \nmldiffer{\nmllink{bt\_thick\_scheme}{bt_thick_scheme}}	 & 		 & 	'FROM\_BT\_CONT'	 & 	'FROM\_BT\_CONT'	 & 	 \\
+ \hfill \nmldiffer{\nmllink{interp\_type2}{interp_type2}}	 & 		 & 	'LMD94'	 & 	'LMD94'	 & 	 \\
+ \hfill \nmldiffer{\nmllink{kdml}{kdml}}	 & 		 & 	\num*{0.0}{}	 & 	\num*{0.0}{}	 & 	 \\
+ \hfill \nmldiffer{\nmllink{khtr\_max}{khtr_max}}	 & 		 & 	\num*{0.0}{}	 & 	\num*{0.0}{}	 & 	 \\
+ \hfill \nmldiffer{\nmllink{adjust\_net\_srestore\_to\_zero}{adjust_net_srestore_to_zero}}	 & 		 & 	True	 & 	True	 & 	 \\
+ \hfill \nmldiffer{\nmllink{mask\_srestore\_under\_ice}{mask_srestore_under_ice}}	 & 		 & 	False	 & 	False	 & 	 \\
+ \hfill \nmldiffer{\nmllink{debug}{debug}}	 & 		 & 	False	 & 	False	 & 	 \\
+ \hfill \nmldiffer{\nmllink{max\_ent\_it}{max_ent_it}}	 & 		 & 	20	 & 	20	 & 	 \\
+ \hfill \nmldiffer{\nmllink{tolerance\_ent}{tolerance_ent}}	 & 		 & 	\num*{1e-5}{}	 & 	\num*{1e-5}{}	 & 	 \\
+ \hfill \nmldiffer{\nmllink{hmix\_min}{hmix_min}}	 & 		 & 	\num*{2.0}{}	 & 	\num*{2.0}{}	 & 	 \\
 \hline
 \end{tabularx}

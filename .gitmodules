@@ -12,11 +12,11 @@
 	branch = master
 [submodule "configs/mom6-panan"]
 	path = configs/mom6-panan
-	url = https://github.com/COSIMA/mom6-panan
+	url = https://github.com/COSIMA/mom6-panan.git
 	branch = master
 [submodule "configs/mom6-eac"]
 	path = configs/mom6-eac
-	url = https://github.com/COSIMA/mom6-eac
+	url = https://github.com/COSIMA/mom6-eac.git
 	branch = main
 [submodule "MOM6-examples"]
 	path = configs/MOM6-examples
