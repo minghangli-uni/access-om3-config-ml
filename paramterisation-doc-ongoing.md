@@ -447,6 +447,20 @@ thickness diffusivity uses the equivalent barotropic structure as the vertical s
 | AH_VEL_SCALE   | 0.01(both 1deg and 0.25deg) | The velocity scale which is multiplied by the cube of the grid spacing to calculate the biharmonic viscosity. The final viscosity is the largest of this scaled viscosity, the Smagorinsky and Leith viscosities, and AH. |
 | KH_VEL_SCALE   | 0.01 - 1deg / 0.0 - 0.25deg | ! The velocity scale which is multiplied by the grid spacing to calculate the Laplacian viscosity. The final viscosity is the largest of this scaled viscosity, the Smagorinsky and Leith viscosities, and KH. |
 
+An [issue #105](https://github.com/COSIMA/access-om3/issues/105#issue-2141645606) is raised for discussing lateral friction.
+
+> **[aekiss](https://github.com/aekiss)**: All the parameters were inherited from the CESM GMOM_JRA configuration this was based on, so I don't know the reasons for these choices. We should feel free to modify these.
+>
+> Our other MOM6 configurations use Smagorinsky biharmonic (`smagorinsky_ah`) rather than Leith biharmonic (`leith_ah`) - see [this table](https://github.com/COSIMA/access-om3-doc/blob/fa085e42d560eee3988708731f2a4fe8a5d4c840/tables/MOM_input/mom6_nml_diff.md). ACCESS-OM2 used isotropic biharmonic Smagorinsky - see section 3.2.5 of the [tech report](https://github.com/COSIMA/ACCESS-OM2-1-025-010deg-report).
+>
+> For details see the [mom_hor_visc module reference](https://mom6.readthedocs.io/en/main/api/generated/modules/mom_hor_visc.html?highlight=smagorinsky Leith).
+>
+> According the [GFDL OM4 paper](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019MS001726) only their 0.5° config used Laplacian Leith (`SMAGORINSKY_KH`) in addition to biharmonic Leith.
+
+
+
+
+
 ## module  MOM_vert_friction 
 
 | Parameters             | Value                  | Reasons for selection                                        |
@@ -474,7 +488,24 @@ thickness diffusivity uses the equivalent barotropic structure as the vertical s
 | FOX_KEMPER_ML_RESTRAT_COEF | 1.0                    | A nondimensional coefficient that is proportional to the ratio of the deformation radius to the dominant lengthscale of the submesoscale mixed layer instabilities, times the minimum of the ratio of the mesoscale eddy kinetic energy to the large-scale geostrophic kinetic energy or 1 plus the square of the grid spacing over the deformation radius, as detailed by Fox-Kemper et al. (2010)<br />re-stratification in the surface mixed layer due to submesoscale eddies. This parameterization applies an overturning circulation dependent on the horizontal buoyancy gradients within the mixed layer. |
 | MLE_FRONT_LENGTH           | 500 -1deg/ 250-0.25deg | is the frontal-length scale used to calculate the upscaling of buoyancy gradients that is otherwise represented by the parameter  FOX_KEMPER_ML_RESTRAT_COEF. If MLE_FRONT_LENGTH is non-zero, it is recommended to set FOX_KEMPER_ML_RESTRAT_COEF=1.0.<br />**a strong sensitivity of SST biases to the MLE parameterization parameters, with the frontal length the most efficient parameter found to optimize for reducing biases.** |
 | MLE_MLD_DECAY_TIME         | 2592000                | The time-scale for a running-mean filter applied to the mixed-layer depth used in the MLE restratification parameterization. When the MLD deepens below the current running-mean the running-mean is instantaneously set to the current MLD. |
-|                            |                        |                                                              |
+
+An issue regarding the mixed layer restratification can be found at [#104](https://github.com/COSIMA/access-om3/issues/104#issue-2141645295).
+
+> **[aekiss](https://github.com/aekiss)**: The short answer is we didn't test different choices of these parameters in ACCESS-OM2. `front_length_const`=5e3 is the [default](https://github.com/mom-ocean/MOM5/blob/d7ba13a3f364ce130b6ad0ba813f01832cada7a2/src/mom5/ocean_param/lateral/ocean_submesoscale.F90#L208-L216) in MOM5. Note that this value is [actually a floor](https://github.com/mom-ocean/MOM5/blob/d7ba13a3f364ce130b6ad0ba813f01832cada7a2/src/mom5/ocean_param/lateral/ocean_submesoscale.F90#L1431) because we also use `front_length_deform_radius`=true (also the default).
+>
+> This is a lot larger than the values of [`mle_front_length`](https://github.com/mom-ocean/MOM6/search?q=mle_front_length) =1000 in [MOM6-CICE6_1deg_jra55do_ryf](https://github.com/COSIMA/MOM6-CICE6/blob/f62734f09eace00c32ee6bec87fb30926e661a0e/MOM_input) or 500 in [mom6-panan/
+> MOM_input](https://github.com/COSIMA/mom6-panan/blob/a900ea38a08896d2b6c43350a1505830212c9c69/MOM_input) - see [this table](https://github.com/COSIMA/access-om3-doc/blob/fa085e42d560eee3988708731f2a4fe8a5d4c840/tables/MOM_input/mom6_nml_diff.md). Perhaps some difference in the implementation of this scheme in MOM5 vs MOM6 could account for the difference (e.g. maybe there's a different definition of mixed layer depth?)
+> Both these values are in turn larger than expected from 500m / 250m for 1deg and 0.25deg in the [GFDL OM4 paper](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019MS001726).
+>
+> Although `MLE_MLD_DECAY_TIME` is just a tuning parameter for the heuristic filter applied to the MLD seen by the mixed-layer restratification scheme, `MLE_MLD_DECAY_TIME` = 345600 s = 4 days is an order of magnitude shorter than the 30 days used in the [GFDL OM4 paper](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019MS001726), so we should use a larger value, e.g. our other MOM6 configs use 2592000.0s = 30 days - see [this table](https://github.com/COSIMA/access-om3-doc/blob/fa085e42d560eee3988708731f2a4fe8a5d4c840/tables/MOM_input/mom6_nml_diff.md).
+>
+> Some experimentation may be worthwhile once the configuration is running. The [GFDL OM4 paper](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019MS001726) provides examples of the impact of different parameter choices - as expected, increased mixed layer restratification shoals the mixed layer depth, which in turn impacts SST.
+>
+> Note that we're currently using KPP (unlike the [GFDL OM4 paper](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019MS001726) which uses EPBL) - this might also have an impact.
+
+
+
+
 
 ## module MOM_diagnostics
 
