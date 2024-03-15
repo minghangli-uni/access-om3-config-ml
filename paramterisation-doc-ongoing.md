@@ -144,6 +144,66 @@ data:
 | ---------------- | ----------------------------------- | --------------------- |
 | DIAG_COORD_DEF_Z | FILE:ocean_vgrid.nc,interfaces=zeta |                       |
 
+To turn on the `rho2` output, see ([issue](https://github.com/COSIMA/MOM6-CICE6/issues/40#issue-2153288016))
+
+By including `/g/data/ik11/inputs/mom6/panan-01/diag_rho2.nc` in our list of input files and adding the following snippet to `MOM_input`.
+
+```fortran
+NUM_DIAG_COORDS = 2
+DIAG_COORDS = "z 01 ZSTAR", "rho2 02 RHO"
+DIAG_COORD_DEF_01 = "FILE:ocean_vgrid.nc,interfaces=zeta"
+DIAG_COORD_DEF_02 = "FILE:diag_rho2.nc,interfaces=rho2"
+```
+
+for `/g/data/ik11/inputs/mom6/panan-01/diag_rho2.nc`, was mentioned under the [same issue](https://github.com/COSIMA/MOM6-CICE6/issues/40#issue-2153288016).
+
+> **[AndyHoggANU](https://github.com/AndyHoggANU)** : Aah, I think that might be right. Sorry for the lack of provenance there!
+> I think it came from here:
+> https://github.com/COSIMA/mom6-diagnostics/blob/main/PanAntarctic/inputs/RFNC1.ipynb
+> But it may not be quite what we want for the 1 degree, so might be worth talking about how we adjust it.
+
+```fortran
+$ ncdump /g/data/ik11/inputs/mom6/panan-01/diag_rho2.nc
+netcdf diag_rho2 {
+dimensions:
+	nrho = 80 ;
+variables:
+	double nrho(nrho) ;
+		nrho:_FillValue = NaN ;
+	double rho2(nrho) ;
+		rho2:_FillValue = NaN ;
+		rho2:units = "kg m-3" ;
+data:
+
+ nrho = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+    20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
+    38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55,
+    56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73,
+    74, 75, 76, 77, 78, 79 ;
+
+ rho2 = 999.5, 1033, 1033.78955223881, 1033.87776787703, 1033.96464691468,
+    1034.05018935175, 1034.13439518824, 1034.21726442415, 1034.29879705948,
+    1034.37899309423, 1034.4578525284, 1034.535375362, 1034.61156159501,
+    1034.68641122744, 1034.7599242593, 1034.83210069058, 1034.90294052127,
+    1034.97244375139, 1035.04061038093, 1035.10744040989, 1035.17293383827,
+    1035.23709066607, 1035.29991089329, 1035.36139451994, 1035.421541546,
+    1035.48035197149, 1035.53782579639, 1035.59396302072, 1035.64876364446,
+    1035.70222766763, 1035.75435509022, 1035.80514591223, 1035.85460013366,
+    1035.90271775451, 1035.94959275451, 1035.99646775451, 1036.04334275451,
+    1036.09021775451, 1036.13709275451, 1036.18396775451, 1036.23084275451,
+    1036.27771775451, 1036.32459275451, 1036.37146775451, 1036.41834275451,
+    1036.46521775451, 1036.51209275451, 1036.55896775451, 1036.60584275451,
+    1036.65271775451, 1036.69959275451, 1036.74646775451, 1036.79334275451,
+    1036.84021775451, 1036.88709275451, 1036.93396775451, 1036.98084275451,
+    1037.02771775451, 1037.04771775451, 1037.06771775451, 1037.08771775451,
+    1037.10771775451, 1037.12771775451, 1037.14771775451, 1037.16771775451,
+    1037.18771775451, 1037.20771775451, 1037.22771775451, 1037.24771775451,
+    1037.26771775451, 1037.28771775451, 1037.30771775451, 1037.32771775451,
+    1037.34771775451, 1037.36771775451, 1037.38771775451, 1037.40771775451,
+    1037.42771775451, 1037.52771775451, 1037.62771775451 ;
+}
+```
+
 
 
 ## module MOM_MEKE
