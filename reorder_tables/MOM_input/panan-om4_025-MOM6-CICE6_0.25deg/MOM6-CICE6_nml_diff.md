@@ -29,7 +29,6 @@
 | [**meke_equilibriu<br>m_alt**](https://github.com/mom-ocean/MOM6/search?q=meke_equilibrium_alt) |   |            |       True |
 | [**meke_equilibriu<br>m_restoring**](https://github.com/mom-ocean/MOM6/search?q=meke_equilibrium_restoring) |  |       |       True |
 | [**meke_restoring_<br>timescale**](https://github.com/mom-ocean/MOM6/search?q=meke_restoring_timescale) |  |         | 10000000.0 |
-| [**meke_visc_drag** ](https://github.com/mom-ocean/MOM6/search?q=meke_visc_drag) |            |            |      False |
 | [**meke_khth_fac**  ](https://github.com/mom-ocean/MOM6/search?q=meke_khth_fac) |            |            |        0.0 |
 | [**meke_khtr_fac**  ](https://github.com/mom-ocean/MOM6/search?q=meke_khtr_fac) |            |            |        0.0 |
 | [**meke_khmeke_fac**](https://github.com/mom-ocean/MOM6/search?q=meke_khmeke_fac) |            |        0.5 |        0.5 |

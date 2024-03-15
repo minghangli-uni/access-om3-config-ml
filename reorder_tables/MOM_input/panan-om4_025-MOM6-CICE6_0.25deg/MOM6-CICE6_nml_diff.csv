@@ -28,7 +28,6 @@ diff,group,variable,mom6-panan/MOM_input,mom6-om4-025/MOM_input,MOM6-CICE6_0.25d
 *,"=HYPERLINK(""https://github.com/mom-ocean/MOM6/search?q=mom6"", ""&mom6"")","=HYPERLINK(""https://github.com/mom-ocean/MOM6/search?q=meke_equilibrium_alt"", ""meke_equilibrium_alt"")",,,True
 *,"=HYPERLINK(""https://github.com/mom-ocean/MOM6/search?q=mom6"", ""&mom6"")","=HYPERLINK(""https://github.com/mom-ocean/MOM6/search?q=meke_equilibrium_restoring"", ""meke_equilibrium_restoring"")",,,True
 *,"=HYPERLINK(""https://github.com/mom-ocean/MOM6/search?q=mom6"", ""&mom6"")","=HYPERLINK(""https://github.com/mom-ocean/MOM6/search?q=meke_restoring_timescale"", ""meke_restoring_timescale"")",,,10000000.0
-*,"=HYPERLINK(""https://github.com/mom-ocean/MOM6/search?q=mom6"", ""&mom6"")","=HYPERLINK(""https://github.com/mom-ocean/MOM6/search?q=meke_visc_drag"", ""meke_visc_drag"")",,,False
 *,"=HYPERLINK(""https://github.com/mom-ocean/MOM6/search?q=mom6"", ""&mom6"")","=HYPERLINK(""https://github.com/mom-ocean/MOM6/search?q=meke_khth_fac"", ""meke_khth_fac"")",,,0.0
 *,"=HYPERLINK(""https://github.com/mom-ocean/MOM6/search?q=mom6"", ""&mom6"")","=HYPERLINK(""https://github.com/mom-ocean/MOM6/search?q=meke_khtr_fac"", ""meke_khtr_fac"")",,,0.0
 *,"=HYPERLINK(""https://github.com/mom-ocean/MOM6/search?q=mom6"", ""&mom6"")","=HYPERLINK(""https://github.com/mom-ocean/MOM6/search?q=meke_khmeke_fac"", ""meke_khmeke_fac"")",,0.5,0.5

@@ -278,9 +278,6 @@ MEKE_EQUILIBRIUM_RESTORING = True
 MEKE_RESTORING_TIMESCALE = 1.0E+07
                                               ![s] default = 1.0E+06
                                               ! The timescale used to nudge MEKE toward its equilibrium value.
-MEKE_VISC_DRAG = False
-                                              ![Boolean] default = True
-                                              ! If true, use the vertvisc_type to calculate the bottom drag acting on MEKE.
 MEKE_KHTH_FAC = 0.0
                                               ![nondim] default = 0.0
                                               ! A factor that maps MEKE%Kh to KhTh.

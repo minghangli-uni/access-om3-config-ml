@@ -153,7 +153,7 @@ The MEKE equation is 2D and obtained by depth averaging the 3D eddy energy equat
 | MEKE_EQUILIBRIUM_ALT       | True    | use an alternative formula for computing the (equilibrium)initial value of MEKE.<br /> 791     if (CS%MEKE_equilibrium_alt) then<br/> 792       MEKE%MEKE(i,j) = (CS%MEKE_GEOMETRIC_alpha * SN * US%Z_to_L*depth_tot(i,j))**2 / cd2<br />!MEKE_GEOMETRIC_alpha: The nondimensional coefficient governing the efficiency of the GEOMETRIC thickness diffusion, default=0.05<br />!SN: Eady growth rate (1/T)<br />!US%Z_to_L<br />!depth_tot, &    ! The depth of the water column [Z ~> m].<br />!cdrag         !< The bottom drag coefficient for MEKE [nondim]. ($C_d$ )<br />!cd2: drag^2 |
 | MEKE_EQUILIBRIUM_RESTORING | True    | ! restore MEKE back to its equilibrium value, which is calculated at each time step. |
 | MEKE_RESTORING_TIMESCALE   | 1.0E+07 | !   [s] default = 1.0E+06                                    |
-| MEKE_VISC_DRAG             | False   |                                                              |
+|                            |         |                                                              |
 | MEKE_KHTH_FAC              | 0.0     | !parameterizations/lateral/MOM_thickness_diffuse.F90<br /> ! A factor that maps MEKE%Kh to KhTh<br /> 232   if (allocated(MEKE%Kh)) then<br/> 233     if (CS%MEKE_GEOMETRIC) then<br/> 234       !$OMP do<br/> 235       do j=js,je ; do I=is-1,ie<br/> 236         Khth_loc_u(I,j) = Khth_loc_u(I,j) + G%OBCmaskCu(I,j) * CS%MEKE_GEOMETRIC_alpha * &<br/> 237                           0.5*(MEKE%MEKE(i,j)+MEKE%MEKE(i+1,j)) / &<br/> 238                           (VarMix%SN_u(I,j) + CS%MEKE_GEOMETRIC_epsilon)<br/> 239       enddo ; enddo<br/> 240     else<br/> 241       do j=js,je ; do I=is-1,ie<br/> 242         Khth_loc_u(I,j) = Khth_loc_u(I,j) + MEKE%KhTh_fac*sqrt(MEKE%Kh(i,j)*MEKE%Kh(i+1,j))<br/> 243       enddo ; enddo<br/> 244     endif<br/> 245   endif<br />! |
 | MEKE_KHTR_FAC              | 0.0     | Similar to the above. <br />! A factor that maps MEKE%Kh to KhTr. |
 | MEKE_KHMEKE_FAC            | 0.5     | ! A factor that maps MEKE%Kh to Kh for MEKE itself.<br />527       do j=js,je ; do I=is-1,ie<br/> 528         ! Limit Kh to avoid CFL violations.<br/> 529         if (allocated(MEKE%Kh)) &<br/> 530           Kh_here = max(0., CS%MEKE_Kh) + &<br/> 531               CS%KhMEKE_Fac*0.5*(MEKE%Kh(i,j)+MEKE%Kh(i+1,j)) |
@@ -389,8 +389,8 @@ thickness diffusivity uses the equivalent barotropic structure as the vertical s
 | Parameters                 | Value                  | Reasons for selection                                        |
 | -------------------------- | ---------------------- | ------------------------------------------------------------ |
 | MIXEDLAYER_RESTRAT         | True                   | a density-gradient dependent re-stratifying flow is imposed in the mixed layer. Can be used in ALE mode without restriction but in layer mode can only be used if BULKMIXEDLAYER is true. |
-| FOX_KEMPER_ML_RESTRAT_COEF | 1.0                    | A nondimensional coefficient that is proportional to the ratio of the deformation radius to the dominant lengthscale of the submesoscale mixed layer instabilities, times the minimum of the ratio of the mesoscale eddy kinetic energy to the large-scale geostrophic kinetic energy or 1 plus the square of the grid spacing over the deformation radius, as detailed by Fox-Kemper et al. (2010) |
-| MLE_FRONT_LENGTH           | 500 -1deg/ 250-0.25deg | is the frontal-length scale used to calculate the upscaling of buoyancy gradients that is otherwise represented by the parameter  FOX_KEMPER_ML_RESTRAT_COEF. If MLE_FRONT_LENGTH is non-zero, it is recommended to set FOX_KEMPER_ML_RESTRAT_COEF=1.0. |
+| FOX_KEMPER_ML_RESTRAT_COEF | 1.0                    | A nondimensional coefficient that is proportional to the ratio of the deformation radius to the dominant lengthscale of the submesoscale mixed layer instabilities, times the minimum of the ratio of the mesoscale eddy kinetic energy to the large-scale geostrophic kinetic energy or 1 plus the square of the grid spacing over the deformation radius, as detailed by Fox-Kemper et al. (2010)<br />re-stratification in the surface mixed layer due to submesoscale eddies. This parameterization applies an overturning circulation dependent on the horizontal buoyancy gradients within the mixed layer. |
+| MLE_FRONT_LENGTH           | 500 -1deg/ 250-0.25deg | is the frontal-length scale used to calculate the upscaling of buoyancy gradients that is otherwise represented by the parameter  FOX_KEMPER_ML_RESTRAT_COEF. If MLE_FRONT_LENGTH is non-zero, it is recommended to set FOX_KEMPER_ML_RESTRAT_COEF=1.0.<br />**a strong sensitivity of SST biases to the MLE parameterization parameters, with the frontal length the most efficient parameter found to optimize for reducing biases.** |
 | MLE_MLD_DECAY_TIME         | 2592000                | The time-scale for a running-mean filter applied to the mixed-layer depth used in the MLE restratification parameterization. When the MLD deepens below the current running-mean the running-mean is instantaneously set to the current MLD. |
 |                            |                        |                                                              |
 
@@ -422,7 +422,7 @@ thickness diffusivity uses the equivalent barotropic structure as the vertical s
 
 | Parameters           | Value | variable_incode | Reasons for selection                                        |
 | -------------------- | ----- | --------------- | ------------------------------------------------------------ |
-| USE_CVMix_CONVECTION | False | CVMix_conv_init | turns on the enhanced mixing due to convection via CVMix. This scheme increases diapycnal diffs./viscs. at statically unstable interfaces. Relevant   parameters are contained in the CVMix_CONVECTION% parameter block. |
+| USE_CVMix_CONVECTION | True  | CVMix_conv_init | turns on the enhanced mixing due to convection via CVMix. This scheme increases diapycnal diffs./viscs. at statically unstable interfaces. Relevant   parameters are contained in the CVMix_CONVECTION% parameter block. |
 
 ```fortran
  60   real    :: prandtl_conv !< Turbulent Prandtl number used in convective instabilities.
@@ -455,6 +455,21 @@ thickness diffusivity uses the equivalent barotropic structure as the vertical s
 | BBL_MIXING_AS_MAX    | False             | ! If true, take the maximum of the diffusivity from the BBL mixing and the other diffusivities. Otherwise, diffusivity from the BBL_mixing is simply added. |
 | INT_TIDE_DECAY_SCALE | 300.3003003003003 | The decay scale away from the bottom for tidal TKE with the new coding when INT_TIDE_DISSIPATION is used." |
 
+>  source: CVMix/Chapter 6
+>
+> Mixing arises when mechanical energy dissipates at the small scales in the presence of a nonzero gradient of tracer and/or momentum.
+>
+> 1. breaking internal waves in ocean interior
+> 2. tidal wave interacting with continental shelves (friction bottom drag)
+>
+> general practice to assume unit Prandtl number. 
+
+
+
+
+
+
+
 ## MOM_bkgnd_mixing
 
 > ! Adding static vertical background mixing coefficients
@@ -464,7 +479,7 @@ thickness diffusivity uses the equivalent barotropic structure as the vertical s
 | Parameters               | Value   | variable_incode          | Reasons for selection                                        |
 | ------------------------ | ------- | ------------------------ | ------------------------------------------------------------ |
 | PRANDTL_BKGND            | 5.0     | prandtl_bkgnd            | Turbulent Prandtl number used to convert vertical background diffusivities into viscosities. |
-| KD                       | 2.0E-5  | Kd                       | The background diapycnal diffusivity of density in the interior. <br />molecular value, ~1e-7 m2 s-1, may be used. |
+| KD                       | 2.0E-5  | Kd                       | The background diapycnal diffusivity of density in the interior. molecular value, ~1e-7 m2 s-1, may be used. |
 | HORIZ_VARYING_BACKGROUND | False   | horiz_varying_background | If true, apply vertically uniform, latitude-dependent background diffusivity, as described in Danabasoglu et al., 2012<br />https://mom6.readthedocs.io/en/main/api/generated/pages/Vertical_Viscosity.html?highlight=rayleigh#channel-drag |
 | KD_MIN                   | 2.0E-06 | Kd_min                   | The minimum diapycnal diffusivity.                           |
 | KD_MAX                   | 0.1     | Kd_max                   | The maximum permitted increment for the diapycnal diffusivity from TKE-based parameterizations, or a negative value for no limit. |
@@ -495,11 +510,38 @@ code snippet related to static vertical background mixing coefficients
 | USE_LMD94   | True  | Large-McWilliams-Doney (JGR 1994) shear mixing parameterization. |
 | N_SMOOTH_RI | 1     | If > 0, vertically smooth the Richardson number by applying a 1-2-1 filter N_SMOOTH_RI times. |
 
+$$
+\kappa_{kpp\ shear} = \left\{
+
+\begin{aligned}
+
+&\kappa_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Ri<0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{gravitational instability regime}\\
+&\kappa_0[1-(\frac{Ri}{Ri_0})^2]^3\ 0<Ri<Ri_0\ \ \ \ \text{shear instability regime}\\
+&0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Ri\ge Ri_0\ \ \ \ \ \ \ \ \ \ \ \ \text{stable regime}
+
+
+\end{aligned}
+
+\right.
+$$
+
+The form in the shear instability regime falls most rapidly near $Ri = 0.4 Ri_0$, which aims to parameterize the onset of shear instability. In this neighborhood, rapid changes in Ri can cause gravitational instabilities to develop in the vertical, but these are largely controlled by vertically smoothing Ri profiles with a 1 − 2 − 1 smoother. Unlike Pacanowski and Philander (1981), Large et al. (1994) chose a unit Prandtl number for shear induced mixing; i.e., the shear induced viscosity is the same as the shear induced diffusivity,
+$$
+Pr_{kpp} = \frac{\nu_{kpp\ shear}}{\kappa_{kpp\ shear}}
+$$
+
+
 ## module MOM_CVMix_ddiff
 
 | Parameters      | Value | Reasons for selection                                        |
 | --------------- | ----- | ------------------------------------------------------------ |
 | USE_CVMIX_DDIFF | True  | If true, turns on double diffusive processes via CVMix. Note that double diffusive processes on viscosity are ignored in CVMix, see http://cvmix.github.io/ for justification. |
+
+>  [Heat diffuses about 100 times faster than salt](https://www.sciencedirect.com/topics/earth-and-planetary-sciences/double-diffusion).
+>
+> 
+
+
 
 ## module MOM_diabatic_aux
 

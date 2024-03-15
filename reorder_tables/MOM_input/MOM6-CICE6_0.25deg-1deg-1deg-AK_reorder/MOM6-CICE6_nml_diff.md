@@ -9,6 +9,7 @@
 | [**niglobal**       ](https://github.com/mom-ocean/MOM6/search?q=niglobal) |       1440 |        360 |        360 |
 | [**njglobal**       ](https://github.com/mom-ocean/MOM6/search?q=njglobal) |       1080 |        300 |        300 |
 | [**nk**             ](https://github.com/mom-ocean/MOM6/search?q=nk) |        100 |         50 |         50 |
+| [**meke_visc_drag** ](https://github.com/mom-ocean/MOM6/search?q=meke_visc_drag) |            |      False |      False |
 | [**meke_khth_fac**  ](https://github.com/mom-ocean/MOM6/search?q=meke_khth_fac) |        0.0 |        1.0 |        1.0 |
 | [**meke_khtr_fac**  ](https://github.com/mom-ocean/MOM6/search?q=meke_khtr_fac) |        0.0 |        1.0 |        1.0 |
 | [**meke_viscosity_<br>coeff_ku**](https://github.com/mom-ocean/MOM6/search?q=meke_viscosity_coeff_ku) | 0.0 |   0.2 |        0.2 |
