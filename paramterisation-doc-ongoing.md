@@ -69,6 +69,28 @@
 | ---------- | ----- | ----------------------------- |
 | NK         | 100   | ! The number of model layers. |
 
+```bash
+$ pwd
+/g/data/ik11/inputs/access-om2/input_20230515_025deg_topog/mom_025deg
+[ml0072@gadi-login-03 mom_025deg]$ ncdump -c ocean_vgrid.nc
+netcdf ocean_vgrid {
+dimensions:
+	nzv = 101 ;
+variables:
+	double zeta(nzv) ;
+		zeta:units = "meters" ;
+		zeta:standard_name = "vertical_grid_vertex" ;
+		zeta:long_name = "vgrid" ;
+		zeta:author = "Kial Stewart" ;
+
+// global attributes:
+		:history = " | Updated on Mon Nov  2 16:01:19 AEDT 2020 using https://github.com/COSIMA/make_025deg_topo/tree/f262fbf" ;
+data:
+}
+```
+
+
+
 ## module MOM_tracer_registry
 
 
