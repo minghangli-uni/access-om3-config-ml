@@ -10,7 +10,7 @@ Most of the updates are sourced from discussions in [namelist-discussion](https:
 
 - Removal of mesoscale eddy mixing parametersiations (e.g., `USE_MEKE=False`)
 - Removal of `BAD_VAL_XXX_MAX` nor `BAD_VAL_XXX_MIN`
-- Set `NK=75` to match `ACCESS-OM2-01` - use `KDS75 z*`
+- Set `NK=50`. TODO: Set `NK=75` to match `ACCESS-OM2-01` - use `KDS75 z*`
 - No parameters associated with `TIDES`
 - `NUM_DIAG_COORDS=2` includes `z_star` and `rho_2`
 
