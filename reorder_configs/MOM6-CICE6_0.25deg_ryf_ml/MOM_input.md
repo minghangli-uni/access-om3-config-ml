@@ -1,3 +1,4 @@
+```
 ! === module MOM ===
 USE_REGRIDDING = True
                                               ![Boolean] default = False
@@ -44,9 +45,9 @@ BOUND_SALINITY = True
                                               ! salt than is available and drive the salinity negative otherwise.)
 
 MIN_SALINITY = 0.0
-                                			  ! "[PPT] default = 0.01
-                               		 	      !  The minimum value of salinity when BOUND_SALINITY=True. The default is 0.01
-                                			  !  for backward compatibility but ideally should be 0."
+                                			  			! "[PPT] default = 0.01
+                               		 	      		!  The minimum value of salinity when BOUND_SALINITY=True. The default is 0.01
+                                			  			!  for backward compatibility but ideally should be 0."
 
 C_P = 3992.0
                                               ![J kg-1 K-1] default = 3991.86795711963
@@ -275,7 +276,7 @@ VISC_RES_SCALE_COEF = 4
 ! === module MOM_set_visc ===
 CHANNEL_DRAG = True
                                               ![Boolean] default = False
-                                              ! If true, the bottom drag is exerted directly on each layer proportional to the
+                                               ! If true, the bottom drag is exerted directly on each layer proportional to the
                                               ! fraction of the bottom it overlies.
 HBBL = 10.0
                                               ![m]
@@ -337,7 +338,7 @@ VELOCITY_TOLERANCE = 1.0E-04
 BOUND_CORIOLIS = True
                                               ![Boolean] default = False
                                               ! If true, the Coriolis terms at u-points are bounded by the four estimates of
-                                              ! (f+rv)v from the four neighboring v-points, and similarly at v-points.  This
+                                               ! (f+rv)v from the four neighboring v-points, and similarly at v-points.  This
                                               ! option would have no effect on the SADOURNY Coriolis scheme if it were
                                               ! possible to use centered difference thickness fluxes.
 ! === module MOM_tidal_forcing ===
@@ -352,16 +353,16 @@ MASS_WEIGHT_IN_PRESSURE_GRADIENT = True
 ! === module MOM_hor_visc ===
 
 LAPLACIAN = True                              
-                                              !   [Boolean] default = False
-                               			      ! If true, use a Laplacian horizontal viscosity.
+                                               !   [Boolean] default = False
+                               			      		 ! If true, use a Laplacian horizontal viscosity.
 
 SMAGORINSKY_AH = True
 
 ​                                              !   [Boolean] default = False
 ​                                              ! If true, use a biharmonic Smagorinsky nonlinear eddy viscosity.
 AH_VEL_SCALE = 0.01
-​					                           ! The velocity scale which is multiplied by the cube of the grid spacing to calculate the biharmonic viscosity. 
-​					                           ! The final viscosity is the largest of this scaled viscosity, the Smagorinsky and Leith viscosities, and AH.
+​					                           					 ! The velocity scale which is multiplied by the cube of the grid spacing to calculate the biharmonic viscosity. 
+​					                           					 ! The final viscosity is the largest of this scaled viscosity, the Smagorinsky and Leith viscosities, and AH.
 SMAG_BI_CONST = 0.06
 ​                                              ! "[nondim] default = 0.0
 ​                                              ! The nondimensional biharmonic Smagorinsky constant,
@@ -556,10 +557,9 @@ KD_MIN = 2.0E-06
                                               ! The minimum diapycnal diffusivity.
 ! === module MOM_kappa_shear ===
 USE_JACKSON_PARAM = True      
-
-​												!   [Boolean] default = False
-​                               			 	! If true, use the Jackson-Hallberg-Legg (JPO 2008) shear mixing
-​                                				! parameterization.
+​																							!   [Boolean] default = False
+      ​                               			 	! If true, use the Jackson-Hallberg-Legg (JPO 2008) shear mixing
+      ​                                				! parameterization.
 
 MAX_RINO_IT = 25
                                               ! "[nondim] default = 50
@@ -649,3 +649,4 @@ HMIX_MIN = 2.0
                                               ! "[m] default = 0.0
                                               ! The minimum mixed layer depth if the mixed layer depth
                                               ! is determined dynamically."
+```
